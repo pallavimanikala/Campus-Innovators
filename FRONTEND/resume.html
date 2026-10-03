@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motapothula Hareesh Kumar - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .resume {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #4285f4;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 16px;
+            color: #4285f4;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+        
+        .contact span {
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1a1a;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 15px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+        
+        .item-title {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        .item-subtitle {
+            color: #4285f4;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .item-date {
+            color: #666;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .item-description {
+            color: #555;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #4285f4;
+        }
+        
+        .skill-category h4 {
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .skill-category p {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.3;
+        }
+        
+        .achievements ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            padding: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .achievements li:before {
+            content: "▸ ";
+            color: #4285f4;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            .resume {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+            }
+            .contact {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="header">
+            <h1 class="name">MOTAPOTHULA HAREESH KUMAR</h1>
+            <p class="title">Software Developer</p>
+            <div class="contact">
+                <span>📧 mhareeshkumar90@gmail.com</span>
+                <span>📱 +91 9014323118</span>
+                <span>📍 Hyderabad, Telangana</span>
+                <span>💼 <a href="https://www.linkedin.com/in/mhareeshkumar/" style="color: #4285f4; text-decoration: none;">LinkedIn</a></span>
+                <span>💻 <a href="https://github.com/mhareeshkumar" style="color: #4285f4; text-decoration: none;">GitHub</a></span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Bachelor of Technology in Computer Science & Engineering</div>
+                        <div class="item-subtitle">Malla Reddy Engineering College</div>
+                    </div>
+                    <div class="item-date">2023 - 2027</div>
+                </div>
+                <div class="item-description">Current CGPA: 8.5/10 | Relevant Coursework: Data Structures & Algorithms, Database Management Systems, Web Technologies, Object-Oriented Programming</div>
+            </div>
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Intermediate (12th Grade)</div>
+                        <div class="item-subtitle">Narayana IIT Academy</div>
+                    </div>
+                    <div class="item-date">2021 - 2023</div>
+                </div>
+                <div class="item-description">Percentage: 97.8% | Stream: MPC (Mathematics, Physics, Chemistry)</div>
+            </div>
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Secondary School Certificate (10th Grade)</div>
+                        <div class="item-subtitle">Sri Vivekananda Vidyalayam</div>
+                    </div>
+                    <div class="item-date">2021</div>
+                </div>
+                <div class="item-description">CGPA: 10.0/10</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <p>C++, Java, Python, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Web Technologies</h4>
+                    <p>HTML5, CSS3, Bootstrap, React.js</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Database & Backend</h4>
+                    <p>MySQL, Database Management Systems</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Core Concepts</h4>
+                    <p>Data Structures & Algorithms, Object-Oriented Programming</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Frontend Development Intern</div>
+                        <div class="item-subtitle">TechnoRise Solutions Pvt Ltd</div>
+                    </div>
+                    <div class="item-date">Jun 2024 - Aug 2024</div>
+                </div>
+                <div class="item-description">
+                    • Developed responsive web applications using React.js and Bootstrap, improving user experience by 25%<br>
+                    • Collaborated with 3-member team to implement RESTful API integrations using JavaScript and MySQL<br>
+                    • Optimized website performance through code refactoring, reducing page load time by 20%
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Software Development Intern</div>
+                        <div class="item-subtitle">CodeCraft Technologies</div>
+                    </div>
+                    <div class="item-date">Dec 2023 - Feb 2024</div>
+                </div>
+                <div class="item-description">
+                    • Implemented data structures and algorithms in C++ and Java for optimization projects<br>
+                    • Built database-driven applications using MySQL, handling 1000+ records efficiently<br>
+                    • Participated in code reviews and learned industry best practices for clean, maintainable code
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">E-Commerce Website</div>
+                        <div class="item-subtitle">React.js, Node.js, MySQL</div>
+                    </div>
+                    <div class="item-date">Mar 2024</div>
+                </div>
+                <div class="item-description">
+                    • Developed full-stack e-commerce platform with user authentication, product catalog, and shopping cart functionality<br>
+                    • Implemented responsive design using Bootstrap and React.js, ensuring compatibility across devices<br>
+                    • Integrated MySQL database for product management and user data storage
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Student Management System</div>
+                        <div class="item-subtitle">Java, MySQL, Swing GUI</div>
+                    </div>
+                    <div class="item-date">Jan 2024</div>
+                </div>
+                <div class="item-description">
+                    • Built desktop application for managing student records with CRUD operations using Java and MySQL<br>
+                    • Designed intuitive GUI using Java Swing with search and filter functionality<br>
+                    • Implemented data validation and error handling for robust application performance
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Portfolio Website</div>
+                        <div class="item-subtitle">HTML, CSS, JavaScript, Bootstrap</div>
+                    </div>
+                    <div class="item-date">Nov 2023</div>
+                </div>
+                <div class="item-description">
+                    • Created responsive personal portfolio showcasing projects and skills using modern web technologies<br>
+                    • Implemented smooth animations and interactive elements using CSS3 and JavaScript<br>
+                    • Optimized for SEO and cross-browser compatibility
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <div class="achievements">
+                <ul>
+                    <li>Solved 200+ Data Structures and Algorithms problems on LeetCode and GeeksforGeeks</li>
+                    <li>Participated in college coding competitions and hackathons</li>
+                    <li>Google Developer Student Club (GDSC) active member</li>
+                    <li>Completed online certifications in React.js and Database Management</li>
+                    <li>Academic excellence award for maintaining 97.8% in Intermediate</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Innovative Idea</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-nav">
+        <div class="container">
+             <a class="navbar-brand fw-bold" href="index.html">
+                <img src="https://www.mrec.ac.in/Images/MRDU.jpg" alt="College Logo" class="d-inline-block align-text-top">
+                Innovation Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item"><a class="nav-link" href="index.html" id="nav-home">Home</a></li>
+                  
+                    <li class="nav-item"><a class="nav-link" href="submit-idea-login.html" id="nav-submit-idea">Submit Idea</a></li>
+                    <li class="nav-item"><a class="nav-link" href="previous-projects.html" id="nav-prev-projects">Previous Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="build-startups.html" id="nav-startups">Build Startups</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faculty-login.html" id="nav-faculty">Faculty Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html" id="nav-about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html" id="nav-contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="form-section page-section">
+        <div class="container">
+             <h2 class="text-center section-title mb-4">Submit Your Innovative Idea</h2>
+             <p class="text-center text-muted mb-5">Fill in the details below to share your project concept with the Innovation Hub.</p>
+            <div class="row justify-content-center">
+                 <div class="col-lg-10 col-xl-9">
+                     <div class="card form-container-card shadow-lg border-0">
+                         <form id="idea-submission-form" novalidate>
+                            <h4 class="mb-4 text-primary fw-semibold border-bottom pb-2">Project & Student Details</h4>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="full-name" class="form-label fw-medium">Full Name</label>
+                                    <input type="text" class="form-control form-control-lg" id="full-name" name="fullName" required>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="roll-number" class="form-label fw-medium">Roll Number</label>
+                                    <input type="text" class="form-control form-control-lg" id="roll-number" name="rollNumber" required pattern="^[a-zA-Z0-9]+$" title="Enter a valid roll number (alphanumeric)">
+                                     
+                                </div>
+                                 <div class="col-md-6">
+                                    <label for="project-title" class="form-label fw-medium">Project Title</label>
+                                    <input type="text" class="form-control form-control-lg" id="project-title" name="projectTitle" required>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="department" class="form-label fw-medium">Department</label>
+                                    <select class="form-select form-select-lg" id="department" name="department" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="CSE">CSE</option>
+                                        <option value="AIML">AIML</option>
+                                        <option value="IoT">IoT</option>
+                                        <option value="Civil">Civil Engineering</option>
+                                        <option value="Mechanical">Mechanical Engineering</option>
+                                        <option value="DataScience">Data Science</option>
+                                        <option value="ECE">ECE</option>
+                                        <option value="EEE">EEE</option>
+                                    </select>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="year" class="form-label fw-medium">Year of Study</label>
+                                    <select class="form-select form-select-lg" id="year" name="year" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="1">1st Year</option>
+                                        <option value="2">2nd Year</option>
+                                        <option value="3">3rd Year</option>
+                                        <option value="4">4th Year</option>
+                                    </select>
+                                     
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="mobile-number" class="form-label fw-medium">Mobile Number</label>
+                                    <input type="tel" class="form-control form-control-lg" id="mobile-number" name="mobileNumber" pattern="[6-9][0-9]{9}" placeholder="10 digit Indian number" title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9" required>
+                                    
+                                </div>
+                                <div class="col-12">
+                                    <label for="project-abstract" class="form-label fw-medium">Project Abstract</label>
+                                    <textarea class="form-control form-control-lg" id="project-abstract" name="projectAbstract" rows="7" maxlength="500" placeholder="Briefly describe your project idea, the problem it solves, your proposed solution, and key objectives (max 500 characters)..." required></textarea>
+                                    <div id="char-count" class="form-text text-end mt-1 text-muted small">0 / 500 characters</div>
+                                     
+                                </div>
+                                <div class="col-12">
+                                    <label for="project-pdf" class="form-label fw-medium">Upload Detailed PDF (Optional, Max 5MB)</label>
+                                    <input class="form-control form-control-lg" type="file" id="project-pdf" name="projectPdf" accept=".pdf">
+                                    <div class="form-text text-muted small mt-1">You can upload a single PDF file containing the detailed proposal, diagrams, references, etc.</div>
+                                </div>
+                                <div class="col-12 text-center mt-4 pt-3">
+                                    <button type="submit" class="btn btn-success btn-lg fw-semibold px-5 py-3 rounded-pill submit-idea-btn">
+                                        <i class="bi bi-check-circle-fill me-2"></i>Submit Idea for Review
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+       <footer class="main-footer text-white text-center">
+        <div class="container">
+            <p class="mb-0">© <span id="current-year"></span> Malla Reddy (MR) Deemed to be University - Campus Innovators. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+ </body>
+ </html>

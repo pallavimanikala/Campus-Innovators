@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Innovators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+    <img src="logo.jpg" 
+         alt="College Logo" 
+         style="height: 55px; width: auto; object-fit: contain; background: white; border-radius: 6px; padding: 3px;">
+    <span>Campus Innovators</span>
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                         <a class="nav-link active" href="index.html" id="nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="submit-idea-login.html" id="nav-submit-idea">Submit Idea</a>
+                    </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="live-events.html" id="nav-live-events">Live Events</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="past-events.html">Past Events</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="previous-projects.html" id="nav-prev-projects">Previous Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="build-startups.html" id="nav-startups">Build Startups</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faculty-login.html" id="nav-faculty">Faculty Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html" id="nav-about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html" id="nav-contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="home-hero-section">
+        <div class="container home-hero-content">
+            <h1 class="display-3 fw-bold">Ignite Your Innovation</h1>
+            <p class="lead mb-4">The platform to share, explore, and transform your groundbreaking ideas into reality.</p>
+            <a class="btn btn-primary btn-lg main-cta-button rounded-pill" href="submit-idea-login.html" role="button">
+                <i class="bi bi-lightbulb-fill me-2"></i> Submit Your Idea Now
+            </a>
+             <a class="btn btn-info btn-lg secondary-cta-button rounded-pill ms-md-2" href="live-events.html" role="button">
+                 <i class="bi bi-calendar-event-fill me-2"></i> Check Live Events
+             </a>
+            <a class="btn btn-outline-light btn-lg secondary-cta-button rounded-pill ms-md-2 mt-2 mt-md-0" href="previous-projects.html" role="button">
+                 <i class="bi bi-search me-2"></i> Explore Past Projects
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Info Cards Section -->
+        <section class="info-section page-section">
+            <div class="container">
+                <h2 class="text-center section-title mb-5">How It Works</h2>
+                 <div class="row g-4 info-cards justify-content-center">
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="card info-card h-100">
+                            <div class="card-body">
+                                <i class="bi bi-lightbulb-fill display-3 text-primary mb-3"></i>
+                                <h5 class="card-title fw-semibold">1. Submit Your Idea</h5>
+                                <p class="card-text text-muted">Easily submit your innovative project concepts through our streamlined form.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="card info-card h-100">
+                            <div class="card-body">
+                                <i class="bi bi-binoculars-fill display-3 text-success mb-3"></i>
+                                <h5 class="card-title fw-semibold">2. Get Reviewed</h5>
+                                <p class="card-text text-muted">Faculty members review submissions, providing valuable feedback and guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="card info-card h-100">
+                            <div class="card-body">
+                                <i class="bi bi-rocket-takeoff-fill display-3 text-info mb-3"></i>
+                                <h5 class="card-title fw-semibold">3. Build & Launch</h5>
+                                <p class="card-text text-muted">Explore past projects, check events, or propose your idea as a potential startup.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more content sections if needed -->
+
+    </main>
+
+     <!-- Footer -->
+     <footer class="main-footer text-white text-center">
+    <div class="container">
+        <p class="mb-0 text-white">© <span id="current-year"></span> Malla Reddy (MR) Deemed to be University - Campus Innovators. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+ </body>
+ </html>

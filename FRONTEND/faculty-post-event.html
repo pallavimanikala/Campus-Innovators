@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post New Live Event - Faculty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="faculty-dashboard.html">
+                <img src="https://www.mrec.ac.in/Images/MRDU.jpg" alt="College Logo" class="d-inline-block align-text-top">
+                Campus Innovators - Faculty
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="faculty-dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="faculty-post-event.html">Post Event</a></li>
+                    <li class="nav-item"><a class="nav-link" href="previous-projects.html">Projects Archive</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="sessionStorage.clear(); window.location.href='faculty-login.html'; return false;">
+                            <i class="bi bi-box-arrow-right me-1"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="page-section form-section mt-5 pt-4">
+        <div class="container">
+            <h2 class="section-title text-center text-primary fw-bold mb-2">Post a New Live Event</h2>
+            <p class="text-center text-muted mb-4 small">Share details about upcoming campus events, workshops, or news.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg border-0 rounded-4 p-4 p-md-5">
+                        
+                        <div id="event-alert" class="alert d-none mb-4" role="alert"></div>
+
+                        <!-- Direct onsubmit handler guarantees zero GET URL reloads -->
+                        <form id="post-event-form" onsubmit="handlePostEvent(event)" novalidate>
+                            <h5 class="fw-bold text-primary mb-3"><i class="bi bi-journal-bookmark-fill me-2"></i>Event Details</h5>
+                            <hr class="mb-4">
+
+                            <!-- Event Title -->
+                            <div class="mb-3">
+                                <label for="eventTitle" class="form-label small fw-medium text-muted mb-1">Event Title</label>
+                                <input type="text" class="form-control" id="eventTitle" placeholder="e.g., AI & Machine Learning Workshop" required>
+                            </div>
+
+                            <!-- Date & Time -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="eventDate" class="form-label small fw-medium text-muted mb-1">Date</label>
+                                    <input type="date" class="form-control" id="eventDate" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="eventTime" class="form-label small fw-medium text-muted mb-1">Time</label>
+                                    <input type="time" class="form-control" id="eventTime" required>
+                                </div>
+                            </div>
+
+                            <!-- Location / Venue -->
+                            <div class="mb-3">
+                                <label for="eventVenue" class="form-label small fw-medium text-muted mb-1">Location / Venue</label>
+                                <input type="text" class="form-control" id="eventVenue" placeholder="e.g., Main Auditorium, Online (Zoom Link), Room C-305" required>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="mb-3">
+                                <label for="eventDescription" class="form-label small fw-medium text-muted mb-1">Description</label>
+                                <textarea class="form-control" id="eventDescription" rows="4" placeholder="Provide a brief description of the event..." required></textarea>
+                            </div>
+
+                            <!-- Registration Link (Optional) -->
+                            <div class="mb-3">
+                                <label for="registrationLink" class="form-label small fw-medium text-muted mb-1">Registration Link (Optional)</label>
+                                <input type="url" class="form-control" id="registrationLink" placeholder="https://forms.gle/example or https://eventbrite.com/...">
+                            </div>
+
+                            <!-- Image Upload (Optional) -->
+                            <div class="mb-4">
+                                <label for="eventPoster" class="form-label small fw-medium text-muted mb-1">Upload Event Poster/Image (Optional, JPG/PNG, Max 2MB)</label>
+                                <input class="form-control" type="file" id="eventPoster" accept="image/*">
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-success btn-lg px-5 rounded-pill fw-semibold">
+                                    <i class="bi bi-megaphone-fill me-2"></i>Post Event Now
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">© <span id="current-year"></span> Malla Reddy (MR) Deemed to be University - Campus Innovators. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const API_BASE = "http://localhost:8000/api/v1";
+
+        // Access guard check
+        if (!sessionStorage.getItem('access_token') || sessionStorage.getItem('isFacultyLoggedIn') !== 'true') {
+            alert("Access Denied. Please log in as faculty first.");
+            window.location.href = 'faculty-login.html';
+        }
+
+        async function handlePostEvent(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const alertBox = document.getElementById('event-alert');
+            const token = sessionStorage.getItem('access_token');
+
+            const eventData = {
+                title: document.getElementById('eventTitle').value.trim(),
+                description: document.getElementById('eventDescription').value.trim(),
+                event_date: document.getElementById('eventDate').value,
+                venue: document.getElementById('eventVenue').value.trim()
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/events`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(eventData)
+                });
+
+                if (response.ok) {
+                    alertBox.className = "alert alert-success";
+                    alertBox.textContent = "Event posted successfully and saved to PostgreSQL!";
+                    alertBox.classList.remove('d-none');
+                    document.getElementById('post-event-form').reset();
+                } else {
+                    const err = await response.json();
+                    alertBox.className = "alert alert-danger";
+                    alertBox.textContent = "Error: " + (err.detail || "Failed to post event.");
+                    alertBox.classList.remove('d-none');
+                }
+            } catch (error) {
+                alertBox.className = "alert alert-danger";
+                alertBox.textContent = "Cannot connect to server. Check Docker backend container.";
+                alertBox.classList.remove('d-none');
+            }
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
